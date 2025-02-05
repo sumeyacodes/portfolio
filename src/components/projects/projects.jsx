@@ -15,10 +15,10 @@ export function Projects() {
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <label className={projectStyle.projectsHeader}>
+      <motion.label className={projectStyle.projectsHeader}>
         <span>02.</span>
         <h1 className={projectStyle.projectsHeader}>My Projects</h1>
-      </label>
+      </motion.label>
       <motion.div className={projectStyle.projectsGrid}>
         {projects.map((project, index) => (
           <article key={index} className={projectStyle.projectCard}>

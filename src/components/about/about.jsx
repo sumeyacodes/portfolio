@@ -15,12 +15,12 @@ export function About() {
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <label className={aboutStyle.aboutHeader}>
+      <motion.label {...animationConfig} className={aboutStyle.aboutHeader}>
         <span>01.</span>
         <h1>About Me</h1>
-      </label>
+      </motion.label>
 
-      <motion.div {...animationConfig} className={aboutStyle.aboutContent}>
+      <motion.article {...animationConfig} className={aboutStyle.aboutContent}>
         <p>
           Lorem ipsum odor amet, consectetuer adipiscing elit. Turpis aenean mi
           ridiculus quisque ultricies vulputate! Sapien posuere interdum vel,
@@ -45,19 +45,7 @@ export function About() {
           torquent; vulputate fermentum.
         </p>
         <br />
-        <p>
-          Bibendum semper tellus nunc consectetur torquent porta dui montes.
-          Vehicula dapibus diam facilisis viverra nascetur. Mattis blandit
-          nascetur montes a in vulputate. Sem elit euismod quisque pulvinar sed,
-          magna duis. Orci vulputate sit feugiat potenti sapien tortor taciti.
-          Natoque torquent integer tortor nulla semper. Ac integer tellus litora
-          nam tortor dictum leo maximus. Sapien montes dapibus netus interdum
-          varius laoreet. Dapibus nibh hac taciti magna integer maximus sodales.
-          Dapibus mi consectetur dapibus augue nulla cubilia sapien sodales.
-          Tempus tellus quam ex magna dapibus. Aptent sodales dignissim gravida
-          torquent; vulputate fermentum.
-        </p>
-      </motion.div>
+      </motion.article>
     </motion.section>
   );
 }
