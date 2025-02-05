@@ -3,7 +3,6 @@
 import { animationConfig, containerVariants } from "@/utils";
 import { motion } from "framer-motion";
 import aboutStyle from "./about.module.css";
-import Link from "next/link";
 
 export function About() {
   return (

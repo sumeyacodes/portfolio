@@ -13,20 +13,21 @@
     system-ui, sans-serif;
   --background: radial-gradient(circle, #05152e, #03080f 100%);
 }
-
 html {
-  @apply h-full overflow-hidden bg-gradient-to-br from-[#05152e] to-[#03080f];
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+  background: var(--background);
+  overscroll-behavior: none;
+  overflow-x: hidden;
 }
 
 body {
-  @apply h-full overflow-y-auto overflow-x-hidden;
-  background: var(--background);
+  overflow-y: scroll;
 }
 
 section {
   max-width: 1000px;
 }
+
 @layer base {
   :root {
     --blue: #3b82f6;

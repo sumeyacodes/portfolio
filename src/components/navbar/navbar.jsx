@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 import navStyles from "./navbar.module.css";
 import { animationConfig } from "@/utils";
 
@@ -25,8 +25,15 @@ export function NavBar() {
         {/* Desktop Navigation */}
         <div className={navStyles.desktopNav}>
           {navItems.map((item) => (
-            <Link key={item.id} to={item.section} smooth={true} duration={500}>
-              <label className={navStyles.navItemId}>{item.id}.</label>{" "}
+            <Link
+              key={item.id}
+              to={item.section}
+              smooth={true}
+              duration={500}
+              className={navStyles.navLink}
+              spy={true}
+            >
+              <span className={navStyles.navItemId}>{item.id}.</span>
               <span className={navStyles.spanItem}>{item.label}</span>
             </Link>
           ))}
@@ -38,34 +45,34 @@ export function NavBar() {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          {/* Mobile Menu Overlay */}
-          {isOpen && (
-            <motion.div {...animationConfig}>
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.id}
-                  {...animationConfig}
-                  className={navStyles.mobileMenu}
-                  transition={{
-                    duration: 0.2,
-                  }}
-                >
-                  <Link
-                    key={item.id}
-                    to={item.section}
-                    smooth={true}
-                    duration={500}
-                    offset={-80}
-                    onClick={() => setIsOpen(false)}
-                    className={navStyles.navItems}
-                  >
-                    <label className={navStyles.navItemId}>{item.id}.</label>{" "}
-                    <span className={navStyles.spanItem}>{item.label}</span>
-                  </Link>
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
+          <motion.div
+            className={`${navStyles.mobileMenu} ${
+              isOpen ? navStyles.mobileMenuOpen : ""
+            }`}
+            initial="hidden"
+            animate={isOpen ? "visible" : "hidden"}
+            variants={{
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: -20 },
+            }}
+            transition={{ duration: 0.2 }}
+          >
+            {navItems.map((item) => (
+              <Link
+                key={item.id}
+                to={item.section}
+                smooth={true}
+                duration={500}
+                offset={-80}
+                onClick={() => setIsOpen(false)}
+                className={navStyles.navLink}
+                spy={true}
+              >
+                <span className={navStyles.navItemId}>{item.id}.</span>
+                <span className={navStyles.spanItem}>{item.label}</span>
+              </Link>
+            ))}
+          </motion.div>
         </div>
       </nav>
     </motion.header>
