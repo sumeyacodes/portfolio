@@ -1,0 +1,34 @@
+.aboutSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+.aboutHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.aboutHeader h1 {
+  color: var(--heading1);
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-right: 0.7rem;
+}
+
+.aboutHeader span {
+  font-size: 1.4rem;
+  font-weight: 200;
+  color: var(--blue);
+  font-family: monospace;
+}
+
+.aboutContent {
+  font-size: clamp(var(--fz-md), 5vw, var(--fz-lg));
+  letter-spacing: 0.5px;
+  color: var(--heading2);
+  padding: 3rem 0;
+}

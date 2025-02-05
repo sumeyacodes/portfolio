@@ -1,5 +1,8 @@
 .navbar {
-  padding-top: 1rem;
+  padding-top: 25px;
+  padding-right: 25px;
+  justify-self: end;
+  font-size: 0.9rem;
 }
 
 .navItemId,
@@ -16,6 +19,7 @@
   color: var(--heading1);
   margin-right: 2rem;
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .spanItem:hover,
@@ -49,7 +53,7 @@
 }
 
 .mobileMenu > * {
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 
 @media (max-width: 768px) {

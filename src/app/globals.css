@@ -2,23 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
+  --font: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
+    system-ui, sans-serif;
   --background: radial-gradient(circle, #05152e, #03080f 100%);
-  --foreground: #171717;
-  --font: "Roboto", serif;
+}
+
+html {
+  @apply h-full overflow-hidden bg-gradient-to-br from-[#05152e] to-[#03080f];
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  /* background: var(--background); */
-  font-family: "Roboto", serif;
+  @apply h-full overflow-y-auto overflow-x-hidden;
   background: var(--background);
-  line-height: 1.3;
-  height: 100vh;
-  letter-spacing: 0.5px;
-  margin: 0;
 }
 
+section {
+  max-width: 1000px;
+}
 @layer base {
   :root {
     --blue: #3b82f6;
@@ -26,7 +34,6 @@ body {
     --heading2: #8892b0;
     --radius: 0.5rem;
     --font-family: "Roboto", serif;
-
     --transition: all 300ms ease-in-out;
 
     --fz-xxs: 12px;
@@ -38,8 +45,4 @@ body {
     --fz-xxl: 22px;
     --fz-heading: 32px;
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }
