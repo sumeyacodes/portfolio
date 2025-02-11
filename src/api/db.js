@@ -10,15 +10,13 @@ export async function seedDatabase() {
     const title = "My First Post";
     const post = "This is a seeded blog post!";
 
-    await sql(
-      `INSERT INTO blogs (title, post) VALUES ($1, $2) RETURNING *`,
-      [title, post] // Pass values as an array
-    );
+    await sql(`INSERT INTO blogs (title, post) VALUES ($1, $2) RETURNING *`, [
+      title,
+      post,
+    ]);
 
     console.log("Database seeded successfully!");
   } catch (error) {
     console.error("Error seeding database:", error);
   }
 }
-
-seedDatabase();

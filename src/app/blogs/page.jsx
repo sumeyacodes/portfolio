@@ -1,4 +1,3 @@
-// app/blog/page.js
 import { getBlogPosts } from "@/api/db";
 
 export default async function BlogPage() {
@@ -10,6 +9,7 @@ export default async function BlogPage() {
         <article key={blog.id} className="text-white">
           <h1>{blog.title}</h1>
           <p>{blog.post}</p>
+          <a href={"/blogs/" + blog.id}> open post</a>
         </article>
       ))}
     </section>
