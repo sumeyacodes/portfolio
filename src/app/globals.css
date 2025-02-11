@@ -14,7 +14,7 @@
   --background: radial-gradient(circle, #05152e, #03080f 100%);
 }
 html {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
   background: var(--background);
   overscroll-behavior: none;
   overflow-x: hidden;

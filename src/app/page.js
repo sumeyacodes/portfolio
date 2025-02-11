@@ -1,7 +1,5 @@
-import { Hero } from "@/components/hero";
+import { Hero, About, Projects } from "@/components";
 import mainPageStyles from "./page.module.css";
-import { Projects } from "@/components/projects";
-import { About } from "@/components/about/about";
 
 export default function Home() {
   return (
