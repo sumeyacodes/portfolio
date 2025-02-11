@@ -16,7 +16,13 @@ export function Hero() {
         </h3>
         <p className={heroStyles.description}>I like to build cool things.</p>
 
-        <Link to="projects" className={heroStyles.projectButton}>
+        <Link
+          to="projects"
+          smooth="true"
+          duration={500}
+          spy="true"
+          className={heroStyles.projectButton}
+        >
           Check out my projects!
         </Link>
       </section>
