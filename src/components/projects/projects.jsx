@@ -4,6 +4,7 @@ import { projects, containerVariants } from "@/utils";
 import { motion } from "framer-motion";
 import projectStyle from "./projects.module.css";
 import Link from "next/link";
+import { HoverEffect } from "../ui/project-card-hover";
 
 export function Projects() {
   return (
@@ -19,17 +20,8 @@ export function Projects() {
         <span>02.</span>
         <h1 className={projectStyle.projectsHeader}>My Projects</h1>
       </motion.label>
-      <motion.div className={projectStyle.projectsGrid}>
-        {projects.map((project, index) => (
-          <article key={index} className={projectStyle.projectCard}>
-            <h2>{project.title}</h2>
-            <p>{project.description}</p>
-            <Link href={project.url} className={projectStyle.projectLink}>
-              View Project
-            </Link>
-          </article>
-        ))}
-      </motion.div>
+
+      <HoverEffect items={projects} />
     </motion.section>
   );
 }

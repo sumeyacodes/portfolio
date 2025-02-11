@@ -13,6 +13,7 @@ export const NavLinks = ({ items }) => (
 );
 
 export const navItems = [
+  { id: "00", label: "Home", section: "/" },
   { id: "01", label: "About", section: "#about" },
   { id: "02", label: "Projects", section: "#projects" },
   { id: "03", label: "Blog", section: "/blogs" },

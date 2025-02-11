@@ -1,4 +1,4 @@
-import { getBlogPosts } from "@/api/db";
+import { getBlogPosts } from "@/api/models";
 
 export default async function BlogPage({ params }) {
   const blogPosts = await getBlogPosts();

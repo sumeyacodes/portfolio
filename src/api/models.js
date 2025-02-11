@@ -1,4 +1,4 @@
-import { sql } from "../../config";
+import { sql } from "./config";
 
 export async function getBlogPosts() {
   const results = await sql`SELECT * FROM blogs`;
