@@ -3,38 +3,38 @@
   flex-direction: column;
   justify-content: center;
   min-height: 90vh;
+}
 
-  h1 {
-    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
-    font-family: monospace;
-    margin: 0px 0px 20px 2px;
-    font-weight: 400;
-    line-height: 0.9;
-    color: var(--blue);
-  }
+.hero h1 {
+  font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+  font-family: monospace;
+  margin: 0px 0px 20px 2px;
+  font-weight: 400;
+  line-height: 0.9;
+  color: var(--blue);
+}
 
-  h2 {
-    font-size: clamp(50px, 8vw, 60px);
-    line-height: 1.3;
-    font-weight: 700;
-    line-height: 0.9;
-    color: var(--heading1);
-  }
+.hero h2 {
+  font-size: clamp(50px, 8vw, 60px);
+  line-height: 1.3;
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--heading1);
+}
 
-  h3 {
-    font-size: clamp(50px, 8vw, 60px);
-    color: var(--heading2);
-    margin-top: 5px;
-    line-height: 1.2;
-    font-weight: 700;
-  }
+.hero h3 {
+  font-size: clamp(50px, 8vw, 60px);
+  color: var(--heading2);
+  margin-top: 5px;
+  line-height: 1.2;
+  font-weight: 700;
+}
 
-  p {
-    font-size: clamp(var(--fz-md), 5vw, var(--fz-lg));
-    letter-spacing: 0.5px;
-    margin: 20px 0px 0px;
-    color: var(--heading2);
-  }
+.hero p {
+  font-size: clamp(var(--fz-md), 5vw, var(--fz-lg));
+  letter-spacing: 0.5px;
+  margin: 20px 0px 0px;
+  color: var(--heading2);
 }
 
 .projectButton {
@@ -48,12 +48,12 @@
   font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
   transition: all 0.3s ease;
   max-width: 18rem;
+}
 
-  &:hover {
-    background-color: rgba(59, 130, 246, 0.1);
-    transform: translate(-0.25rem, -0.25rem);
-    box-shadow: 0.25rem 0.25rem 0 var(--blue);
-  }
+.projectButton:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  transform: translate(-0.25rem, -0.25rem);
+  box-shadow: 0.25rem 0.25rem 0 var(--blue);
 }
 
 @media (max-width: 768px) {

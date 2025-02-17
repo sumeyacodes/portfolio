@@ -7,7 +7,7 @@ export default async function BlogsList() {
 
   return (
     <section className={styles.blogSection}>
-      <h1 className={styles.title}>Latest Blog Posts</h1>
+      <h1>Latest Blog Posts</h1>
       {blogPosts.map((blog) => (
         <BlogCard key={blog.id} blog={blog} />
       ))}

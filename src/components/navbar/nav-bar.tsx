@@ -13,7 +13,6 @@ export function NavBar() {
   return (
     <header className={styles.navbar}>
       {/* Desktop Nav */}
-      <Terminal size={35} stroke={"var(--blue)"} />
 
       <nav className={styles.desktopNav}>
         <NavLinks navItems={navItems} />
@@ -27,8 +26,6 @@ export function NavBar() {
 
         {isOpen && (
           <div className={styles.mobileMenu}>
-            <Terminal size={24} />
-
             <NavLinks navItems={navItems} />
           </div>
         )}

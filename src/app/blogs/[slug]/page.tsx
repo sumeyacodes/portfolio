@@ -15,9 +15,9 @@ export default async function IndividualBlog({ params }: BlogPostParams) {
 
   return (
     <section className={styles.individualBlogSection}>
-      <article className={styles.individualBlogArticle}>
-        <h1 className={styles.individualBlogTitle}>{blog.title}</h1>
-        <p className={styles.individualBlogPost}>{blog.post}</p>
+      <article>
+        <h1>{blog.title}</h1>
+        <p>{blog.post}</p>
       </article>
     </section>
   );

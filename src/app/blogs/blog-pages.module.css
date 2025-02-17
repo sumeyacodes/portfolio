@@ -1,25 +1,21 @@
 .main {
-  min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  min-height: 100vh;
 }
 
 .blogSection {
   max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
-  padding: 4rem 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2.5rem;
-  align-items: start;
-  justify-items: center;
 }
 
-.title {
+.blogSection h1 {
   font-size: 3rem;
   text-align: center;
   color: var(--heading1);
@@ -30,26 +26,23 @@
 .individualBlogSection {
   max-width: 800px;
   width: 100%;
-  margin: auto;
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
-.individualBlogArticle {
+.individualBlogSection article {
   width: 100%;
-  text-align: center;
   padding: 2rem;
 }
 
-.individualBlogTitle {
+.individualBlogSection article h1 {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
   color: var(--heading1);
 }
 
-.individualBlogPost {
+.individualBlogSection article p {
   color: var(--heading2);
-  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
@@ -57,7 +50,7 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 
-  .title {
+  .blogSection h1 {
     font-size: 2.5rem;
   }
 

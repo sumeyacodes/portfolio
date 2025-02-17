@@ -1,40 +1,31 @@
 .navbar {
   position: sticky;
   padding: 1rem;
-  margin: 0 1.5rem 0 1.5rem;
   top: 0;
   font-size: 0.9rem;
   background-color: var(--background);
   z-index: 1000;
   display: flex;
-  /* justify-content: flex-end; */
-
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(500px);
+  font-family: monospace;
 }
 
-.navLink {
-  font-family: monospace;
+.navLink span:first-child {
+  color: var(--blue);
+  margin-right: 0.5rem;
+}
 
-  /* id */
-  span:first-child {
-    color: var(--blue);
-    margin-right: 0.5rem;
-  }
+.navLink span:last-child {
+  color: var(--heading1);
+  margin-right: 2rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
 
-  /* nav item name */
-  span:last-child {
-    color: var(--heading1);
-    margin-right: 2rem;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-
-    &:hover {
-      color: var(--blue);
-    }
-  }
+.navLink span:last-child:hover {
+  color: var(--blue);
 }
 
 .mobileMenu {
@@ -49,28 +40,27 @@
   flex-direction: column;
   gap: 1rem;
   z-index: 1000;
+}
 
-  & > * {
-    margin: 1rem;
-  }
+.mobileMenu > * {
+  margin: 1rem;
 }
 
 .mobileNav {
   display: none;
+}
 
-  /* navbar icons */
-  button {
-    background: none;
-    border: none;
-    color: var(--heading1);
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: all 0.2s ease-in-out;
+.mobileNav button {
+  background: none;
+  border: none;
+  color: var(--heading1);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
 
-    &:hover {
-      color: var(--blue);
-    }
-  }
+.mobileNav button:hover {
+  color: var(--blue);
 }
 
 @media (max-width: 768px) {
