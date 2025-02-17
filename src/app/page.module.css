@@ -1,6 +1,0 @@
-.pageContainer {
-  display: grid;
-  place-content: center;
-  grid-template-rows: auto 1fr;
-  padding: 3rem;
-}

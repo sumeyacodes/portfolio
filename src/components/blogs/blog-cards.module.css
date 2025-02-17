@@ -1,0 +1,41 @@
+.card {
+  background-color: #081a36;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.card section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0.5rem 0;
+
+  h1 {
+    font-size: 1.5rem;
+    color: var(--heading1);
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--heading2);
+  }
+}
+
+.link {
+  color: var(--blue);
+  display: block;
+  margin-left: auto;
+  padding: 0.2rem;
+}
+
+.image {
+  border-radius: 10px;
+}

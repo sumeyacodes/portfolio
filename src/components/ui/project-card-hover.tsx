@@ -3,28 +3,47 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
-export const HoverEffect = ({ items, className }) => {
-  let [hoveredIndex, setHoveredIndex] = useState(null);
+interface Item {
+  title: string;
+  description: string;
+  url: string;
+}
+
+interface HoverEffectProps {
+  items: Item[];
+  className?: string;
+}
+
+interface CardProps {
+  className?: string;
+  children: React.ReactNode;
+}
+
+export const HoverEffect: React.FC<HoverEffectProps> = ({
+  items,
+  className,
+}) => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
         className
       )}
     >
       {items.map((item, idx) => (
         <Link
-          href={item?.url}
-          key={item?.url}
-          className="relative group  block p-2 h-full w-full"
+          href={item.url}
+          key={item.url}
+          className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-[#94929235] dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-[#94929235] dark:bg-slate-800/[0.8] block rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -48,7 +67,7 @@ export const HoverEffect = ({ items, className }) => {
   );
 };
 
-export const Card = ({ className, children }) => {
+export const Card: React.FC<CardProps> = ({ className, children }) => {
   return (
     <div
       className={cn(
@@ -62,7 +81,8 @@ export const Card = ({ className, children }) => {
     </div>
   );
 };
-export const CardTitle = ({ className, children }) => {
+
+export const CardTitle: React.FC<CardProps> = ({ className, children }) => {
   return (
     <h4
       className={cn(
@@ -74,7 +94,11 @@ export const CardTitle = ({ className, children }) => {
     </h4>
   );
 };
-export const CardDescription = ({ className, children }) => {
+
+export const CardDescription: React.FC<CardProps> = ({
+  className,
+  children,
+}) => {
   return (
     <p
       className={cn(

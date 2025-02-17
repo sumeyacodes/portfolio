@@ -1,9 +1,8 @@
 import { Hero, About, Projects } from "@/components";
-import mainPageStyles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className={mainPageStyles.pageContainer}>
+    <main className="mainPage">
       <Hero />
       <About />
       <Projects />

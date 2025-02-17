@@ -1,25 +1,25 @@
 "use client";
 
-import { animationConfig, containerVariants } from "@/utils";
+import { animationVariants } from "@/utils";
 import { motion } from "framer-motion";
-import aboutStyle from "./about.module.css";
+import styles from "./about.module.css";
 
 export function About() {
   return (
     <motion.section
       id="about"
-      className={aboutStyle.aboutSection}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      variants={containerVariants}
+      variants={animationVariants}
+      className={styles.about}
     >
-      <motion.label {...animationConfig} className={aboutStyle.aboutHeader}>
+      <label>
         <span>01.</span>
         <h1>About Me</h1>
-      </motion.label>
+      </label>
 
-      <motion.article {...animationConfig} className={aboutStyle.aboutContent}>
+      <article>
         <p>
           Lorem ipsum odor amet, consectetuer adipiscing elit. Turpis aenean mi
           ridiculus quisque ultricies vulputate! Sapien posuere interdum vel,
@@ -44,7 +44,7 @@ export function About() {
           torquent; vulputate fermentum.
         </p>
         <br />
-      </motion.article>
+      </article>
     </motion.section>
   );
 }
