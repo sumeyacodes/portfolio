@@ -16,9 +16,7 @@ export function Hero() {
     >
       <h1>Hi, my name is</h1>
       <h2>Sumeya.</h2>
-      <h3>
-        I'm a <span className="text-[]">Junior Fullstack Developer.</span>
-      </h3>
+      <h3>I&apos;m a Junior Fullstack Developer.</h3>
       <p>I like to build things.</p>
 
       <Link href="#projects" className={styles.projectButton}>
