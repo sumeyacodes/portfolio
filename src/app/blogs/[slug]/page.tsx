@@ -1,4 +1,4 @@
-import { getBlogPosts, BlogPost } from "@/db/models";
+import { getIndividualBlogPosts, BlogPost } from "@/db/models";
 import styles from "../blog-pages.module.css";
 
 interface BlogPostParams {
@@ -8,10 +8,8 @@ interface BlogPostParams {
 }
 
 export default async function IndividualBlog({ params }: BlogPostParams) {
-  const blogPosts: BlogPost[] = await getBlogPosts();
-
-  const slug = Number((await params).slug);
-  const blog = blogPosts.find((blog) => blog.id === slug);
+  const id = Number((await params).slug);
+  const blog: BlogPost = await getIndividualBlogPosts({ id });
 
   return (
     <section className={styles.individualBlogSection}>
