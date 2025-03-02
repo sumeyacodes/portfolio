@@ -3,7 +3,7 @@
 import { db } from "./config";
 
 export interface BlogPost {
-  id: number;
+  id?: number;
   title: string;
   post: string;
   image?: string;
@@ -19,4 +19,15 @@ export async function getIndividualBlogPosts({ id }): Promise<BlogPost> {
   console.log(results);
   // return results as BlogPost;
   return results.length > 0 ? (results[0] as BlogPost) : null;
+}
+
+export async function createBlogPost({
+  title,
+  post,
+}: BlogPost): Promise<BlogPost> {
+  const results = await db(
+    "INSERT INTO blogs (title, post) VALUES ($1, $2) RETURNING *",
+    [title, post]
+  );
+  return results[0] as BlogPost;
 }
